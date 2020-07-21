@@ -4,15 +4,15 @@
     <modelVersion>4.0.0</modelVersion>
     
     <parent>
-        <groupId>de.hsesslingen.keim.efs</groupId>
+        <groupId>com.github.keim-hs-esslingen</groupId>
         <artifactId>efs-parent</artifactId>
-        <version>0.0.1-SNAPSHOT</version>
+        <version>1.0.0</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 	
-    <groupId>de.hsesslingen.keim.efs</groupId>
+    <groupId>com.github.keim-hs-esslingen</groupId>
     <artifactId>middleware-test</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>Middleware Test</name>
     <description>A collection of classes for testing middleware services.</description>
 
@@ -34,6 +34,8 @@
 
     <properties>
         <java.version>14</java.version>
+		<mobility-commons.version>1.0.0</mobility-commons.version>
+		<middleware-core.version>1.0.0</middleware-core.version>
     </properties>
 
     <dependencies>
@@ -46,18 +48,18 @@
             <artifactId>spring-boot-starter-test</artifactId>
         </dependency>
         <dependency>
-            <groupId>de.hsesslingen.keim</groupId>
+            <groupId>com.github.keim-hs-esslingen</groupId>
             <artifactId>rest-utils</artifactId>
         </dependency>
         <dependency>
-            <groupId>de.hsesslingen.keim.efs</groupId>
+            <groupId>com.github.keim-hs-esslingen</groupId>
             <artifactId>mobility-commons</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${mobility-commons.version}</version>
         </dependency>
         <dependency>
-            <groupId>de.hsesslingen.keim.efs</groupId>
+            <groupId>com.github.keim-hs-esslingen</groupId>
             <artifactId>middleware-core</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
+            <version>${middleware-core.version}</version>
         </dependency>
     </dependencies>
 
