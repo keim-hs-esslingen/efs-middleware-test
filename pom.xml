@@ -6,16 +6,24 @@
     <parent>
         <groupId>com.github.keim-hs-esslingen</groupId>
         <artifactId>efs-parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.0-SNAPSHOT</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 	
     <groupId>com.github.keim-hs-esslingen</groupId>
     <artifactId>middleware-test</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.0-SNAPSHOT</version>
+    
     <name>Middleware Test</name>
     <description>A collection of classes for testing middleware services.</description>
-
+    <url>https://github.com/keim-hs-esslingen/middleware-test</url>
+    
+    <scm>
+        <connection>scm:git:git://github.com:keim-hs-esslingen/middleware-test.git</connection>
+        <developerConnection>scm:git:ssh://github.com:keim-hs-esslingen/middleware-test.git</developerConnection>
+        <url>https://github.com/keim-hs-esslingen/middleware-test</url>
+    </scm>
+    
     <licenses>
         <license>
             <name>MIT License</name>
