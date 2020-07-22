@@ -34,27 +34,13 @@
 
     <properties>
         <java.version>14</java.version>
-		<mobility-commons.version>1.0.0</mobility-commons.version>
 		<middleware-core.version>1.0.0</middleware-core.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.github.keim-hs-esslingen</groupId>
-            <artifactId>rest-utils</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>com.github.keim-hs-esslingen</groupId>
-            <artifactId>mobility-commons</artifactId>
-            <version>${mobility-commons.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.keim-hs-esslingen</groupId>
