@@ -42,7 +42,7 @@
 
     <properties>
         <java.version>14</java.version>
-		<middleware-core.version>1.0.0</middleware-core.version>
+		<middleware-core.version>1.0.0-SNAPSHOT</middleware-core.version>
     </properties>
 
     <dependencies>
