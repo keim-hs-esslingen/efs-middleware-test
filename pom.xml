@@ -6,13 +6,13 @@
     <parent>
         <groupId>com.github.keim-hs-esslingen.efs</groupId>
         <artifactId>efs-parent</artifactId>
-        <version>1.0.0-SNAPSHOT</version>
+        <version>1.0.0</version>
         <relativePath/> <!-- skip parent lookup in parent directory. -->
     </parent>
 	
     <groupId>com.github.keim-hs-esslingen.efs</groupId>
     <artifactId>middleware-test</artifactId>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     
     <name>Middleware Test</name>
     <description>A collection of classes for testing middleware services.</description>
@@ -42,7 +42,7 @@
 
     <properties>
         <java.version>14</java.version>
-		<middleware-core.version>1.0.0-SNAPSHOT</middleware-core.version>
+        <middleware-core.version>1.0.0</middleware-core.version>
     </properties>
 
     <dependencies>
@@ -69,4 +69,68 @@
         </plugins>
     </build>
 
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
+    <profiles>
+        <profile>
+            <!-- This profile contains plugins that are necessary for a deploy and release to the maven central repository. -->
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <!-- Generate SRC-jar when building. -->
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.2.1</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <!-- Generate javadoc-jar when building. -->
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.2.0</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <!-- Sign builded jars for deployment -->
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>  
 </project>
