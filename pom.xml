@@ -16,12 +16,12 @@
     
     <name>Middleware Test</name>
     <description>A collection of classes for testing middleware services.</description>
-    <url>https://github.com/keim-hs-esslingen/middleware-test</url>
+    <url>https://github.com/keim-hs-esslingen/efs-middleware-test</url>
     
     <scm>
-        <connection>scm:git:git://github.com:keim-hs-esslingen/middleware-test.git</connection>
-        <developerConnection>scm:git:ssh://github.com:keim-hs-esslingen/middleware-test.git</developerConnection>
-        <url>https://github.com/keim-hs-esslingen/middleware-test</url>
+        <connection>scm:git:git://github.com:keim-hs-esslingen/efs-middleware-test.git</connection>
+        <developerConnection>scm:git:ssh://github.com:keim-hs-esslingen/efs-middleware-test.git</developerConnection>
+        <url>https://github.com/keim-hs-esslingen/efs-middleware-test</url>
     </scm>
     
     <licenses>
