@@ -29,8 +29,8 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import de.hsesslingen.keim.efs.middleware.booking.Booking;
 import de.hsesslingen.keim.efs.middleware.booking.BookingState;
 import de.hsesslingen.keim.efs.middleware.booking.Customer;
-import de.hsesslingen.keim.efs.middleware.booking.Leg;
 import de.hsesslingen.keim.efs.middleware.booking.NewBooking;
+import de.hsesslingen.keim.efs.middleware.common.Leg;
 import de.hsesslingen.keim.efs.middleware.common.Options;
 import java.io.IOException;
 import java.time.Instant;
@@ -144,7 +144,7 @@ public abstract class AdapterTestBase {
             endTime = startTime.plusMillis(originalDiff);
         }
 
-        Leg leg = (Leg) new Leg()
+        var leg = new Leg()
                 .setMode(options.getMeta().getMode())
                 .setFrom(optLeg.getFrom())
                 .setTo(optLeg.getTo())
