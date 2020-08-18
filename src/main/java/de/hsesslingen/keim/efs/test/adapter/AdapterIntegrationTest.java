@@ -23,11 +23,11 @@
  */
 package de.hsesslingen.keim.efs.test.adapter;
 
-import de.hsesslingen.keim.efs.middleware.booking.Booking;
-import de.hsesslingen.keim.efs.middleware.booking.BookingState;
-import de.hsesslingen.keim.efs.middleware.booking.Customer;
-import de.hsesslingen.keim.efs.middleware.booking.NewBooking;
-import de.hsesslingen.keim.efs.middleware.common.Options;
+import de.hsesslingen.keim.efs.middleware.model.Booking;
+import de.hsesslingen.keim.efs.middleware.model.BookingState;
+import de.hsesslingen.keim.efs.middleware.model.Customer;
+import de.hsesslingen.keim.efs.middleware.model.NewBooking;
+import de.hsesslingen.keim.efs.middleware.model.Options;
 import static de.hsesslingen.keim.efs.test.adapter.AdapterTestBase.assertEqualsIfNotNull;
 import java.time.Instant;
 import java.util.List;
