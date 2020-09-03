@@ -6,7 +6,7 @@
     <parent>
         <groupId>com.github.keim-hs-esslingen.efs</groupId>
         <artifactId>efs-parent</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1-SNAPSHOT</version>
         <relativePath/> <!-- skip parent lookup in parent directory. -->
     </parent>
 	
