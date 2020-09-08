@@ -152,7 +152,7 @@ public abstract class AdapterTestBase {
                 .setEndTime(endTime)
                 .setServiceId(optLeg.getServiceId());
 
-        return new NewBooking(BookingState.NEW, leg, customer);
+        return new NewBooking(leg, customer);
     }
 
     private void addCredentialsToRequestBuilder(MockHttpServletRequestBuilder builder, String credentials) {
