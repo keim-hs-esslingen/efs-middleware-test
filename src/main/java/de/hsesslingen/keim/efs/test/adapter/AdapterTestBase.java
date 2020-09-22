@@ -36,9 +36,9 @@ import java.io.IOException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -56,7 +56,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 public abstract class AdapterTestBase {
 
-    private static Log log = LogFactory.getLog(AdapterTestBase.class);
+    private static Logger logger = LoggerFactory.getLogger(AdapterTestBase.class);
     private static final String CREDENTIALS_HEADER_KEY = "x-credentials";
 
     @Autowired
@@ -83,7 +83,7 @@ public abstract class AdapterTestBase {
         try {
             return mapper.readValue(response, clazz);
         } catch (JsonProcessingException ex) {
-            log.error(ex);
+            logger.error("{}", ex);
             throw ex;
         }
     }
@@ -98,7 +98,7 @@ public abstract class AdapterTestBase {
                     .andExpect(matchAll(matchers))
                     .andReturn();
         } catch (Exception ex) {
-            log.error(ex);
+            logger.error("{}", ex);
             throw ex;
         }
     }
