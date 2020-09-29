@@ -12,7 +12,7 @@
 	
     <groupId>com.github.keim-hs-esslingen.efs</groupId>
     <artifactId>middleware-test</artifactId>
-    <version>1.2.3</version>
+    <version>1.2.4-SNAPSHOT</version>
     
     <name>Middleware Test</name>
     <description>A collection of classes for testing middleware services.</description>
