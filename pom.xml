@@ -42,7 +42,6 @@
 
     <properties>
         <java.version>14</java.version>
-        <middleware-core.version>2.0.2-SNAPSHOT</middleware-core.version>
     </properties>
 
     <dependencies>
@@ -53,7 +52,7 @@
         <dependency>
             <groupId>com.github.keim-hs-esslingen.efs</groupId>
             <artifactId>middleware-core</artifactId>
-            <version>3.0.0</version>
+            <version>3.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
 
