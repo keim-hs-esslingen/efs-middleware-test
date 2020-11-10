@@ -31,7 +31,7 @@ import de.hsesslingen.keim.efs.middleware.model.BookingState;
 import de.hsesslingen.keim.efs.middleware.model.Customer;
 import de.hsesslingen.keim.efs.middleware.model.NewBooking;
 import de.hsesslingen.keim.efs.middleware.model.Leg;
-import de.hsesslingen.keim.efs.middleware.model.Options;
+import de.hsesslingen.keim.efs.middleware.model.Option;
 import java.io.IOException;
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
@@ -129,7 +129,7 @@ public abstract class AdapterTestBase {
      * @param customer
      * @return
      */
-    protected NewBooking optionsToNewBooking(Options options, Customer customer) {
+    protected NewBooking optionsToNewBooking(Option options, Customer customer) {
         var optLeg = options.getLeg();
 
         var optStartTime = optLeg.getStartTime();
@@ -161,7 +161,7 @@ public abstract class AdapterTestBase {
         }
     }
 
-    protected List<Options> getOptions(
+    protected List<Option> getOptions(
             String fromLatLon, String toLatLon,
             Instant startTime, Instant endTime,
             Integer radius, Boolean sharing,
@@ -195,13 +195,13 @@ public abstract class AdapterTestBase {
 
         addCredentialsToRequestBuilder(builder, credentials);
 
-        List<Options> options = request(builder, new TypeReference<List<Options>>() {
+        List<Option> options = request(builder, new TypeReference<List<Option>>() {
         }, matchers);
 
         return options;
     }
 
-    protected Booking createBooking(Options option, Customer customer, String credentials, ResultMatcher... matchers) throws Exception {
+    protected Booking createBooking(Option option, Customer customer, String credentials, ResultMatcher... matchers) throws Exception {
         return createBooking(optionsToNewBooking(option, customer), credentials, matchers);
     }
 

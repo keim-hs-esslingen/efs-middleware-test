@@ -27,7 +27,7 @@ import de.hsesslingen.keim.efs.middleware.model.Booking;
 import de.hsesslingen.keim.efs.middleware.model.BookingState;
 import de.hsesslingen.keim.efs.middleware.model.Customer;
 import de.hsesslingen.keim.efs.middleware.model.NewBooking;
-import de.hsesslingen.keim.efs.middleware.model.Options;
+import de.hsesslingen.keim.efs.middleware.model.Option;
 import static de.hsesslingen.keim.efs.test.adapter.AdapterTestBase.assertEqualsIfNotNull;
 import java.time.Instant;
 import java.util.List;
@@ -46,7 +46,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 public abstract class AdapterIntegrationTest extends AdapterTestBase {
 
-    private static List<Options> cachedOptions; // List is static so it is retained between tests.
+    private static List<Option> cachedOptions; // List is static so it is retained between tests.
 
     public static final void clearOptionsCache() {
         cachedOptions = null;
@@ -73,7 +73,7 @@ public abstract class AdapterIntegrationTest extends AdapterTestBase {
     protected abstract boolean getSharing();
 
     //<editor-fold defaultstate="collapsed" desc="Simplified BookingApi methods...">    
-    protected List<Options> getOptions(
+    protected List<Option> getOptions(
             String fromLatLon, String toLatLon,
             Instant startTime, Instant endTime,
             Integer radius, Boolean sharing,
@@ -89,7 +89,7 @@ public abstract class AdapterIntegrationTest extends AdapterTestBase {
      * @return
      * @throws Exception
      */
-    protected List<Options> getOptions() throws Exception {
+    protected List<Option> getOptions() throws Exception {
         return getOptions(
                 getFromLatLon(), getToLatLon(),
                 getStartTime(), getEndTime(),
@@ -98,7 +98,7 @@ public abstract class AdapterIntegrationTest extends AdapterTestBase {
                 status().is2xxSuccessful());
     }
 
-    protected Booking createBooking(Options option, ResultMatcher... matchers) throws Exception {
+    protected Booking createBooking(Option option, ResultMatcher... matchers) throws Exception {
         return createBooking(option, getCustomer(), getBookingCredentials(), matchers);
     }
 
@@ -274,7 +274,7 @@ public abstract class AdapterIntegrationTest extends AdapterTestBase {
      * @return
      * @throws Exception
      */
-    protected List<Options> getCacheOptions() throws Exception {
+    protected List<Option> getCacheOptions() throws Exception {
         if (cachedOptions == null) {
             cachedOptions = getOptions(
                     getFromLatLon(), getToLatLon(),
@@ -287,8 +287,8 @@ public abstract class AdapterIntegrationTest extends AdapterTestBase {
         return cachedOptions;
     }
 
-    protected Options getRandomCachedOption() throws Exception {
-        List<Options> options = getCacheOptions();
+    protected Option getRandomCachedOption() throws Exception {
+        List<Option> options = getCacheOptions();
         return options.get(random.nextInt(options.size()));
     }
 
@@ -299,7 +299,7 @@ public abstract class AdapterIntegrationTest extends AdapterTestBase {
      * @throws Exception
      */
     protected Booking bookRandomOption() throws Exception {
-        Options option = getRandomCachedOption();
+        Option option = getRandomCachedOption();
 
         assertNotNull(option);
 
