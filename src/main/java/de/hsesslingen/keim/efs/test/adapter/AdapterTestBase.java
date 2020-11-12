@@ -125,12 +125,12 @@ public abstract class AdapterTestBase {
      * Creates a NewBooking object from the given options. The returned object
      * is valid and should be ok to submit to the createBooking function.
      *
-     * @param options
+     * @param option
      * @param customer
      * @return
      */
-    protected NewBooking optionsToNewBooking(Option options, Customer customer) {
-        var optLeg = options.getLeg();
+    protected NewBooking optionsToNewBooking(Option option, Customer customer) {
+        var optLeg = option.getLeg();
 
         var optStartTime = optLeg.getStartTime();
         var endTime = optLeg.getEndTime();
@@ -144,13 +144,18 @@ public abstract class AdapterTestBase {
             endTime = startTime.plusMillis(originalDiff);
         }
 
+        var legMode = optLeg.getMode() != null
+                ? optLeg.getMode()
+                : optLeg.getAsset() != null
+                ? optLeg.getAsset().getMode()
+                : null;
+
         var leg = new Leg()
-                .setMode(options.getMeta().getMode())
+                .setMode(legMode)
                 .setFrom(optLeg.getFrom())
                 .setTo(optLeg.getTo())
                 .setStartTime(startTime)
-                .setEndTime(endTime)
-                .setServiceId(optLeg.getServiceId());
+                .setEndTime(endTime);
 
         return new NewBooking(leg, customer);
     }
