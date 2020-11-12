@@ -34,7 +34,8 @@ import de.hsesslingen.keim.efs.middleware.model.Leg;
 import de.hsesslingen.keim.efs.middleware.model.Option;
 import java.io.IOException;
 import java.time.Instant;
-import java.time.temporal.ChronoUnit;
+import java.time.ZonedDateTime;
+import static java.time.temporal.ChronoUnit.MILLIS;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.slf4j.Logger;
@@ -134,14 +135,14 @@ public abstract class AdapterTestBase {
 
         var optStartTime = optLeg.getStartTime();
         var endTime = optLeg.getEndTime();
-        var now = Instant.now();
+        var now = ZonedDateTime.now();
 
         var startTime = optStartTime.isAfter(now) ? optStartTime : now.plusSeconds(5);
 
         if (endTime != null && endTime.isBefore(startTime)) {
             // If the original end time is now before the start time, adjust it to be equally distant to startTime than in the option.
-            var originalDiff = optStartTime.until(endTime, ChronoUnit.MILLIS);
-            endTime = startTime.plusMillis(originalDiff);
+            var originalDiff = optStartTime.until(endTime, MILLIS);
+            endTime = startTime.plus(originalDiff, MILLIS);
         }
 
         var legMode = optLeg.getMode() != null
