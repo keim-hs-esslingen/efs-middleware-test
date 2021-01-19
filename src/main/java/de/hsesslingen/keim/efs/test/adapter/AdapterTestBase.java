@@ -39,7 +39,7 @@ import static java.time.temporal.ChronoUnit.MILLIS;
 import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import static org.slf4j.LoggerFactory.getLogger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MvcResult;
@@ -57,7 +57,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  */
 public abstract class AdapterTestBase {
 
-    private static Logger logger = LoggerFactory.getLogger(AdapterTestBase.class);
+    private static final Logger logger = getLogger(AdapterTestBase.class);
     private static final String CREDENTIALS_HEADER_KEY = "x-credentials";
 
     @Autowired
