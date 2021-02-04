@@ -5,13 +5,13 @@
     <parent>
         <groupId>com.github.keim-hs-esslingen.efs</groupId>
         <artifactId>efs-parent</artifactId>
-        <version>2.0.3-SNAPSHOT</version>
+        <version>2.0.3</version>
         <relativePath /> <!-- skip parent lookup in parent directory. -->
     </parent>
 	
     <groupId>com.github.keim-hs-esslingen.efs</groupId>
     <artifactId>middleware-test</artifactId>
-    <version>3.3.1-SNAPSHOT</version>
+    <version>3.3.1</version>
     
     <name>Middleware Test</name>
     <description>A collection of classes for testing middleware services.</description>
@@ -21,7 +21,7 @@
         <connection>scm:git:https://github.com/keim-hs-esslingen/efs-middleware-test.git</connection>
         <developerConnection>scm:git:https://github.com/keim-hs-esslingen/efs-middleware-test.git</developerConnection>
         <url>https://github.com/keim-hs-esslingen/efs-middleware-test</url>
-        <tag>Release-3.3.0</tag>
+        <tag>Release-3.3.1</tag>
     </scm>
     
     <licenses>
@@ -48,7 +48,7 @@
         <dependency>
             <groupId>com.github.keim-hs-esslingen.efs</groupId>
             <artifactId>middleware-core</artifactId>
-            <version>3.3.1-SNAPSHOT</version>
+            <version>3.3.1</version>
         </dependency>
     </dependencies>
 
